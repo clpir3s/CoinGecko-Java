@@ -5,11 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Map;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MarketData {
+public class MarketData implements Serializable{
+    private static final long serialVersionUID = -1669293150219020249L;
     @JsonProperty("current_price")
     private Map<String, Double> currentPrice;
     @JsonProperty("roi")
